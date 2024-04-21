@@ -1,0 +1,326 @@
+/* Html Reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+/* My code starts here */
+
+
+:root {
+
+    /*fonts*/
+    
+    --main-font: 'Arvo', serif;
+    --title-font: 'Great Vibes', cursive;
+    font-size: 5vh;
+
+    /*colors*/
+    --pink: rgb(220, 92, 143);
+    --black: black;
+    --white: white;
+
+    /*squares*/
+    --gap: 0.6rem;
+    --square-size: 0px; 
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#home-img {
+    height: 100vh;
+}
+
+#text-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 2rem 1fr;
+    gap: var(--gap);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+}
+
+.menu-btn {
+    background-color: var(--pink);
+    color: var(--white);
+    font-family: var(--main-font);
+    font-size: 0.7rem;
+    flex: 1;
+    border-style: none;
+    padding: 0px;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+#title {
+    font-family: var(--title-font);
+    font-size: 2.6rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+p {
+    font-family: var(--main-font);
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.decoration {
+    display: flex;
+    gap: var(--gap)
+}
+
+#dec-1 {
+    align-self: flex-start;
+}
+
+#dec-2 {
+    align-self: flex-end;
+}
+
+.square {
+    height: var(--square-size);
+    width: var(--square-size);
+    background-color: var(--pink);
+}
+
+#side-bar {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: var(--gap);
+}
+
+.white-square {
+    background-color: var(--white);
+}
+
+.black-square {
+    background-color: var(--black);
+}
+
+/* Catalog */
+
+#catalog-browser {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--gap);
+    overflow-y: overlay;
+    overflow-x: hidden;
+    scrollbar-gutter: stable both-edges;
+    height: calc(100vh - 2rem - var(--gap));
+}
+
+
+.article-img {
+    max-width:100%;
+    max-height:100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+/* Selected Article*/
+
+#selected-article-container {
+    display: grid;
+    grid-template-rows: 2rem 60vh 1fr;
+    height: 100vh;
+    color: var(--pink);
+}
+
+.art-name {
+    grid-row: 1 / 2;
+    text-align: center;
+    font-family: var(--main-font);
+    align-self: center;
+}
+
+.img-and-description {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.selected-article-img {
+    width: auto;
+    height: 95%;
+    object-fit: contain;
+    align-self: end;
+}
+
+.art-description {
+    text-align: start;
+    align-self: flex-end;
+    padding: 0.3rem;
+    text-overflow: clip;
+    flex: 1;
+}
+
+.buy-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    padding-top: 1rem;
+}
+
+.price {
+    align-self: center;
+    flex: 1;
+    margin-left: 0.3rem;
+}
+
+.buy-btn {
+    height: 4rem;
+    aspect-ratio: 1 / 1;
+    margin-top: var(--gap);
+    margin-right: 30%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 0.2rem;
+    background-color: var(--pink);
+    font-family: var(--main-font);
+    color: var(--white);
+    font-size: 0.6rem;
+    border-style: none;
+    justify-self: flex-end;
+    justify-content: center;
+}
+
+
+/*Contact*/
+
+#text-area-title {
+    align-self: flex-start;
+}
+
+#mensaje {
+    background-color: var(--pink);
+    color: var(--white);
+    border-style: none;
+    width: 100%;
+    height: 12em;
+    font-size: 0.4rem;
+    padding: 1em;
+}
+
+#mensaje::placeholder {
+    color: var(--white);
+}
+
+#mensaje:focus {
+    border-style: none;
+    outline: none;
+}
+
+#main-content > button {
+    background-color: var(--pink);
+    color: var(--white);
+    border-style: none;
+    width: 100%;
+    font-family: var(--main-font);
+    font-size: 0.5rem;
+}
+
+#contact-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+    color: var(--pink);
+}
